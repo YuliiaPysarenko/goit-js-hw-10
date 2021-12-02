@@ -1,7 +1,5 @@
-export function fetchCountries(name) {
-      const addressLink = "https://restcountries.com/v3.1/name/" + name + "/?fields=name,capital,population,flags,languages";
-    
-    return fetch(addressLink).then(
+export function fetchCountries(name) {    
+    return fetch(`https://restcountries.com/v3.1/name/${name}/?fields=name,capital,population,flags,languages`).then(
     (response) => {
       if (!response.ok) {
         throw new Error(response.status);
